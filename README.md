@@ -2,7 +2,7 @@
 
 A proof of concept for integrating Telnyx AI assistants with Cloudflare Workers, featuring:
 - Use your existing Telnyx AI assistants
-- Outbound AI-powered voice calls
+- Outbound AI-powered voice calls (Note: AI assistant integration requires TeXML API - see TELNYX_INTEGRATION_NOTES.md)
 - Real-time transcription and insights
 - Call recording and chat retrieval
 - Simple web interface

@@ -71,7 +71,10 @@ callsRouter.post('/initiate', async (c) => {
       throw new Error('Failed to create call session in database');
     }
     
-    // Initiate the call using Telnyx API
+    // NOTE: Currently using Call Control API for POC
+    // TODO: Switch to TeXML API for AI assistant support
+    // See TELNYX_INTEGRATION_NOTES.md for details
+    
     const webhookUrl = `${c.req.url.origin}${c.env.TELNYX_WEBHOOK_PATH}`;
     const callPayload = {
       connection_id: c.env.TELNYX_APP_CONNECTION_ID,
@@ -82,15 +85,12 @@ callsRouter.post('/initiate', async (c) => {
       record: 'record-from-answer',
       answering_machine_detection: 'detect',
       client_state: btoa(JSON.stringify({ sessionId, assistantId: validated.assistantId })),
-      // Add AI assistant configuration
-      ai: {
-        assistant_id: validated.assistantId,
-      }
     };
     
     console.log('Initiating Telnyx call with payload:', callPayload);
     console.log('Using API key:', c.env.TELNYX_API_KEY ? 'Present' : 'Missing');
     console.log('Using connection ID:', c.env.TELNYX_APP_CONNECTION_ID || 'Missing');
+    console.log('NOTE: AI assistant not attached - requires TeXML API');
     
     const response = await fetch('https://api.telnyx.com/v2/calls', {
       method: 'POST',
