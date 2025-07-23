@@ -1,0 +1,29 @@
+{
+  "name": "telnyx-ai-demo-frontend",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "deploy": "wrangler pages deploy .svelte-kit/cloudflare --project-name=aiagent-demo",
+    "preview": "vite preview",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
+  },
+  "devDependencies": {
+    "@sveltejs/adapter-cloudflare": "^4.6.0",
+    "@sveltejs/kit": "^2.12.0",
+    "@sveltejs/vite-plugin-svelte": "^3.1.1",
+    "@types/eslint": "^9.6.1",
+    "svelte": "^4.2.18",
+    "svelte-check": "^3.8.4",
+    "typescript": "^5.5.4",
+    "vite": "^5.3.5",
+    "wrangler": "^3.67.1"
+  },
+  "type": "module",
+  "dependencies": {
+    "@fontsource/inter": "^5.1.0",
+    "lucide-svelte": "^0.525.0"
+  }
+}

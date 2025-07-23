@@ -1,0 +1,53 @@
+# Dependencies
+node_modules/
+frontend/node_modules/
+backend/node_modules/
+
+# Build outputs
+frontend/.svelte-kit/
+frontend/build/
+backend/dist/
+*.local
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Cloudflare
+.wrangler/
+backend/.wrangler/
+
+# OS files
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Test files
+playwright-*.png
+*.html
+test-*.js
+check-*.js
+cleanup-*.js
+verify-*.js
+debug-*.js
+serve-test.py
+browser-console-test.js
+comprehensive-diagnostic.js
+detailed-js-test.js
+final-test.js
+webhook-logger.js
+
+# Temporary and debug folders
+debug-extension/
+minimal-repro/
+
+# Lock files (optional - you may want to keep these)
+# package-lock.json
+# frontend/package-lock.json
+# backend/package-lock.json

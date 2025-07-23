@@ -1,0 +1,31 @@
+name = "ai-agent-demo"
+main = "src/index.ts"
+compatibility_date = "2024-12-20"
+compatibility_flags = ["nodejs_compat"]
+
+# D1 Database for call logs
+[[d1_databases]]
+binding = "DB"
+database_name = "telnyx-ai-calls"
+database_id = "a303cf12-862b-445d-9571-1b5f23abc5b4"
+
+# KV for session management
+[[kv_namespaces]]
+binding = "SESSIONS"
+id = "eecd8ef00c9049d888cf940acf9cdc4e"
+
+# Environment variables
+[vars]
+ENVIRONMENT = "production"
+TELNYX_WEBHOOK_PATH = "/api/webhooks/telnyx"
+FRONTEND_URL = "https://aiagent-demo-cqf.pages.dev"
+
+# Secrets (set via wrangler secret put)
+# TELNYX_API_KEY
+# TELNYX_PUBLIC_KEY
+# TELNYX_APP_CONNECTION_ID
+# AUTH_SECRET
+
+# Development environment (use with --env development)
+[env.development]
+vars = { ENVIRONMENT = "development", FRONTEND_URL = "http://localhost:5173" }
